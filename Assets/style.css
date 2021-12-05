@@ -1,0 +1,15 @@
+
+.search-section{
+    margin-bottom: 250px;
+    margin-top: 25px;
+}
+
+.search-container{
+    
+    justify-content: center;
+    text-align: center;
+    display: flexbox;
+    flex-wrap: wrap;
+    
+}
+
