@@ -1,15 +1,45 @@
+:root {
+    --lavender-gray: #c5bad7;
+    --bleached-cedar: #2f2035;
+    --eggplant: #593a49;
+    --spicy-mix: #925e4a;
+    --smoky: #695a7d;
+    --strikemaster: #8a6a84;
+    --brandy-rose: #b99084;
+    --blue-bell: #8d88c3;
+    --picton-blue: #3a97e8;
 
-.search-section{
+    --equator: #e2c65e;
+    --buccaneer: #733535;
+    --ochre: #d17f1f;
+    --aubergine: #380708;
+    --cognac: #ab3e20;
+    --givry: #f7eec6;
+    --driftwood: #b18948;
+    --shilo: #e8a4a4;
+    --turkish-rose: #b17374;
+
+    --java: #22cab6;
+    --tory-blue: #0c67a2;
+    --ebony: #04070a;
+    --deep-sea-green: #0c4566;
+    --black-pearl: #071e34;
+    --eucalyptus: #25b649;
+    --eden: #0d523b;
+    --pale-sky: #647184;
+    --martinique: #342c44;
+}
+
+.search-section {
     margin-bottom: 250px;
     margin-top: 25px;
 }
 
-.search-container{
-    
+.search-container {
+
     justify-content: center;
     text-align: center;
     display: flexbox;
     flex-wrap: wrap;
-    
-}
 
+}
