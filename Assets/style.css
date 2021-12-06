@@ -55,7 +55,6 @@ body {
     background: var(--martinique);
 }
 
-
 form .title {
     color: white;
 }
@@ -73,3 +72,20 @@ form .title {
 }
 
 /* ---------------------------------SEARCH SECTION END */
+
+/* ---------------------------------FOOTER SECTION END */
+
+.footer {
+    background: var(--eden);
+}
+
+.footer p, .footer h1 {
+    color: white;
+}
+
+
+a {
+    color: var(--java);
+}
+
+/* ---------------------------------FOOTER SECTION END */
