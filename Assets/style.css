@@ -51,24 +51,34 @@ body {
 
 /* ---------------------------------SEARCH SECTION START */
 
-#search-container {
-    background: var(--martinique);
+#search-nav {
+    justify-content: center;
+    text-align: center;
+    display: flexbox;
+    flex-wrap: wrap;
+}
+.panel {
+    background: var(--black-pearl);
 }
 
 form .title {
     color: white;
 }
 
-.search-section {
-    margin-bottom: 250px;
-    margin-top: 25px;
+#search-title {
+    background: var(--tory-blue);
 }
 
-.search-container {
-    justify-content: center;
-    text-align: center;
-    display: flexbox;
-    flex-wrap: wrap;
+.search-section {
+    background: var(--martinique);
+    margin-bottom: 250px;
+    position: relative;
+    top: 80px;
+}
+
+.button {
+    color: white;
+    background-color: var(--tory-blue);
 }
 
 /* ---------------------------------SEARCH SECTION END */
