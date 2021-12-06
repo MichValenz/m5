@@ -30,16 +30,46 @@
     --martinique: #342c44;
 }
 
+body {
+    background: var(--ebony);
+    z-index: -1;
+}
+
+/* ---------------------------------HEADER SECTION START */
+
+.title, .subtitle {
+    color: white;
+}
+
+.web-body {
+    color: white;
+    border-bottom: 10px solid var(--eucalyptus);
+    background: var(--eden);
+    padding-bottom: 20px;
+}
+/* ---------------------------------HEADER SECTION END */
+
+/* ---------------------------------SEARCH SECTION START */
+
+#search-container {
+    background: var(--martinique);
+}
+
+
+form .title {
+    color: white;
+}
+
 .search-section {
     margin-bottom: 250px;
     margin-top: 25px;
 }
 
 .search-container {
-
     justify-content: center;
     text-align: center;
     display: flexbox;
     flex-wrap: wrap;
-
 }
+
+/* ---------------------------------SEARCH SECTION END */
