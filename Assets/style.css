@@ -76,13 +76,13 @@ form .title {
 /* ---------------------------------FOOTER SECTION END */
 
 .footer {
+    border-top: 10px solid var(--eucalyptus);
     background: var(--eden);
 }
 
 .footer p, .footer h1 {
     color: white;
 }
-
 
 a {
     color: var(--java);
