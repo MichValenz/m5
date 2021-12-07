@@ -1,13 +1,14 @@
 :root {
-    --lavender-gray: #c5bad7;
-    --bleached-cedar: #2f2035;
-    --eggplant: #593a49;
-    --spicy-mix: #925e4a;
-    --smoky: #695a7d;
-    --strikemaster: #8a6a84;
-    --brandy-rose: #b99084;
-    --blue-bell: #8d88c3;
-    --picton-blue: #3a97e8;
+    --valhalla: #281954;
+    --silver: #e4e4e4;
+    --ironstone: #8d473b;
+    --danube: #5994cd;
+    --black-white: #fffffe;
+    --falcon: #876877;
+    --buccaneer: #5d2e28;
+    --lavender-purple: #8c84c0;
+    --revolver: #271d38;
+    --azure: #3859af;
 
     --equator: #e2c65e;
     --buccaneer: #733535;
@@ -31,22 +32,21 @@
 }
 
 body {
-    background: var(--ebony);
-    z-index: -1;
+    background: var(--silver);
 }
 
 /* ---------------------------------HEADER SECTION START */
 
 .title, .subtitle {
-    color: white;
+    color: var(--ebony);
 }
 
 .web-body {
-    color: white;
-    border-bottom: 10px solid var(--eucalyptus);
-    background: var(--eden);
+    border-bottom: 10px solid var(--valhalla);
+    background: #fff;
     padding-bottom: 20px;
 }
+
 /* ---------------------------------HEADER SECTION END */
 
 /* ---------------------------------SEARCH SECTION START */
@@ -57,8 +57,16 @@ body {
     display: flexbox;
     flex-wrap: wrap;
 }
+
+.search-section {
+    background: var(--lavender-purple);
+    margin-bottom: 250px;
+    position: relative;
+    top: 80px;
+}
+
 .panel {
-    background: var(--black-pearl);
+    background: var(--azure);
 }
 
 form .title {
@@ -66,19 +74,14 @@ form .title {
 }
 
 #search-title {
-    background: var(--tory-blue);
+    background: var(--danube);
 }
 
-.search-section {
-    background: var(--martinique);
-    margin-bottom: 250px;
-    position: relative;
-    top: 80px;
-}
+
 
 .button {
     color: white;
-    background-color: var(--tory-blue);
+    background-color: var(--danube);
 }
 
 /* ---------------------------------SEARCH SECTION END */
@@ -86,12 +89,12 @@ form .title {
 /* ---------------------------------FOOTER SECTION END */
 
 .footer {
-    border-top: 10px solid var(--eucalyptus);
-    background: var(--eden);
+    border-top: 10px solid var(--valhalla);
+    background: #fff;
 }
 
 .footer p, .footer h1 {
-    color: white;
+    color: var(--ebony);
 }
 
 a {
