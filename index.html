@@ -23,20 +23,24 @@
   <section id="search-nav-container" class="section is-large search-section is-justify-content-center">
     <nav id="search-nav" class="columns is-mobile">
       <!---------------FORM START--------------------->
-      <form class="panel column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+      <form id="search-form" class="panel column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
         <h1 id="search-title" class="title panel-heading">Find Your Soundtrack</h1>
         <div class="field has-addons is-justify-content-center">
-          <div class="control bar is-half">
-            <input class="input is-focused" type="text" placeholder="Search by Actor">
+          <div id="textarea-control" class="control bar is-half">
+            <input id="textarea-input" class="input is-focused" type="text" placeholder="Search by Actor">
           </div>
-          <div class="control">
-            <a class="button">Search</a>
+          <div id="button-control" class="control">
+            <button type="submit" class="button">Search</button>
           </div>
         </div>
       </form>
       <!---------------FORM END--------------------->
     </nav>
   </section>
+
+  <div id="testing-output">
+        
+  </div>
 
   <!---------------SEARCH END--------------------->
 
@@ -52,6 +56,7 @@
     </div>
   </footer>
   <!-------------FOOTER END------------------>
+  <script src="/Assets/script.js"></script>
 </body>
 
 </html>
