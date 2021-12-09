@@ -33,6 +33,8 @@ async function getActor(actor) {
 
     //console.log(results);
     results.forEach(result => {
+
+        //Checks each result array and the conditios HAS to include Actor OR Actress
         if (result.description.includes('Actor') || result.description.includes('Actress')) {
 
             let actorData = result.description
@@ -42,19 +44,21 @@ async function getActor(actor) {
 
             /* console.log(getActorDataValues) */
 
-            //Will join all the values so its one giant string, but then splitting every word
+            //Will join all the values so its one giant string, but then splitting every word in an array
             let stringifyActorData = getActorDataValues.join("").split(" ")
-
-            const removeIrrelevantWords = ['(I)', '(II)', '(III)', '(Actor,', '(Actress,']
             
+            //An array of words I want to remove from the data we're getting
+            const removeIrrelevantWords = ['(I)', '(II)', '(III)', '(Actor,', '(Actress,']
+
+            //Filtering out words we don't need, checks if the stingifyActorData has the words we don't want. When it finds we don't want it will remove them
             stringifyActorData = stringifyActorData.filter(checkedData => removeIrrelevantWords.includes(checkedData) === false)
 
+            //This is the variable we want to pass to the Youtube API for it to search
             newActorData = stringifyActorData.toString();
 
             console.log(newActorData)
-        } else {
-            console.log('Not an Actor')
         }
+        //If we want to catch an error, we can just put this into a try block try {}
     });
 }
 
