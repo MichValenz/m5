@@ -22,7 +22,7 @@ function searchActor() {
 searchActor();
 
 function getActor(actor) {
-    
+
     let actorAPI = `https://imdb-api.com/en/API/SearchName/k_a65zgvjy/${actor}`;
 
     fetch(actorAPI).then(function (response) {
@@ -60,7 +60,6 @@ function getActor(actor) {
             
                         console.log(newActorData);
                     }
-                    //If we want to catch an error, we can just put this into a try block try {}
                 });
             });
         };
