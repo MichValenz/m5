@@ -22,22 +22,22 @@ function searchActor() {
 function getActor(actor) {
     let actorAPI = "https://imdb-api.com/en/API/SearchName/k_dp6255mb/" + actor;
 
-    let divOutputContainer = document.getElementById('testing-output');
+    fetch(actorAPI).then(function (response) {
 
-    fetch(actorAPI).then(function(response) {
-
-        if(response.ok) {
+        if (response.ok) {
 
             response.json().then(function (data) {
-                
-                for (var i = 0; i < 10; i++) {
 
-                    let textContainer = document.createElement('p')
-                    textContainer.innerHTML = data.results[i].description
+                for (var i = 0; i < 5; i++) {
 
-                    console.log(data.results[i].description)
+                    let test = data.results[i].description;
 
-                    divOutputContainer.appendChild(textContainer)
+                   let testSecond = Object.values(test);
+                    //toString makes commas for EVERY letter which is not what I want
+                    //Join lets you pick how you space it or don't even space it at all
+                  let testThird = testSecond.join("");
+
+                    console.log(testThird)
                 }
 
                 console.log(data)
