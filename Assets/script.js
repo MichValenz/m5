@@ -19,32 +19,43 @@ function searchActor() {
     });
 }
 
-function getActor(actor) {
-    let actorAPI = "https://imdb-api.com/en/API/SearchName/k_dp6255mb/" + actor;
+searchActor();
 
-    fetch(actorAPI).then(function (response) {
+async function getActor(actor) {
 
-        if (response.ok) {
+    let actorAPI = `https://imdb-api.com/en/API/SearchName/k_a65zgvjy/${actor}`;
 
-            response.json().then(function (data) {
+    const response = await fetch(actorAPI)
 
-                for (var i = 0; i < 5; i++) {
+    const data = await response.json();
 
-                    let test = data.results[i].description;
+    const results = data.results;
 
-                   let testSecond = Object.values(test);
-                    //toString makes commas for EVERY letter which is not what I want
-                    //Join lets you pick how you space it or don't even space it at all
-                  let testThird = testSecond.join("");
+    //console.log(results);
+    results.forEach(result => {
+        if (result.description.includes('Actor') || result.description.includes('Actress')) {
 
-                    console.log(testThird)
-                }
+            let actorData = result.description
 
-                console.log(data)
-            })
+            //Will seperate every single character into a seperate string
+            getActorDataValues = Object.values(actorData)
+
+            /* console.log(getActorDataValues) */
+
+            //Will join all the values so its one giant string, but then splitting every word
+            let stringifyActorData = getActorDataValues.join("").split(" ")
+
+            const removeIrrelevantWords = ['(I)', '(II)', '(III)', '(Actor,', '(Actress,']
+            
+            stringifyActorData = stringifyActorData.filter(checkedData => removeIrrelevantWords.includes(checkedData) === false)
+
+            newActorData = stringifyActorData.toString();
+
+            console.log(newActorData)
+        } else {
+            console.log('Not an Actor')
         }
-    })
+    });
 }
 
-searchActor();
 
