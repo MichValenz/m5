@@ -21,6 +21,8 @@ function searchActor() {
 
 searchActor();
 
+//Noting that async will split off like a branch and deals with more endpoints than sync can. Doing its own thing when it splits. Unlike async, sync does it straight from top to bottom no splitting
+//SetTimeout and setInterval are also async because they have a time and will branch off, while the rest of the code will still run.
 function getActor(actor) {
 
     let actorAPI = `https://imdb-api.com/en/API/SearchName/k_a65zgvjy/${actor}`;
@@ -41,7 +43,7 @@ function getActor(actor) {
             
                         let actorData = result.description
             
-                        //Will seperate every single character into a seperate string
+                        //Create an array, from an object. So then we can use other syntax like join, split, filter etc. Will also seperate every single character into a seperate string
                         getActorDataValues = Object.values(actorData);
             
                         /* console.log(getActorDataValues) */
@@ -59,7 +61,7 @@ function getActor(actor) {
                         newActorData = stringifyActorData.toString();
             
                         console.log(newActorData);
-                    }
+                    };
                 });
             });
         };
