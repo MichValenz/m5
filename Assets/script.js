@@ -75,26 +75,7 @@ function getActor(actor) {
 
 
 
-// function getTrailer(movie) {
 
-//     let trailerAPI =
-//       ('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=trailer&videoType=any&key=AIzaSyAsv2NlxCjo0BCfsh1_2T_IQRlnRt5oTdYY/HTTP/1.1/' + movie)
-
-//     fetch(trailerAPI)
-//     .then(function(response){
-
-//         if (response.ok){
-//             console.log(response);
-//             response.json().then(function(trailers){
-//                 console.log(trailers);
-//                 const foundMovies = trailers.results;
-
-//             })
-//         }
-//     })
-
-
-// }
 
 
 
