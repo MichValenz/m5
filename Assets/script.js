@@ -85,15 +85,17 @@ function getActor(actor) {
                         let stringifyActorData = getActorDataValues.join("").split(" ");
 
                         //An array of words I want to remove from the data we're getting
-                        const removeIrrelevantWords = ['(I)', '(II)', '(III)', '(IV)', '(V)', '(VI)', '(Actor,', '(Actress,'];
+                        const removeIrrelevantWords = ['(I)', '(II)', '(III)', '(Actor,', '(Actress,'];
 
                         //Filtering out words we don't need, checks if the stingifyActorData has the words we don't want. When it finds we don't want it will remove them
                         stringifyActorData = stringifyActorData.filter(checkedData => removeIrrelevantWords.includes(checkedData) === false);
 
                         //This is the variable we want to pass to the Youtube API for it to search
-                        newActorData = stringifyActorData.toString();
+                        let newActorData = stringifyActorData.toString();
 
                         console.log(newActorData);
+
+                        getTrailer(newActorData);
                     };
                 });
             });
@@ -102,3 +104,35 @@ function getActor(actor) {
 };
 
 
+function getTrailer(newActorData) {
+    let trailerAPI =
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + newActorData + "%22trailer%22&videoType=any&key=AIzaSyAsv2NlxCjo0BCfsh1_2T_IQRlnRt5oTdY";
+
+
+
+
+    fetch(trailerAPI).then(function (response) {
+        if (response.ok) {
+            console.log(response);
+            response.json().then(function (videoId) {
+                //console.log(videoId.items[0].id.videoId);
+                let newLink = videoId.items[0].id.videoId;
+                let trailerHref = `https://www.youtube.com/watch?v=${newLink}`;
+
+
+
+                //const foundMovies = trailers.results;
+            });
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+searchActor();
