@@ -8,7 +8,7 @@ The m5 website is designed to provide quick movie trailers for users to sample b
 AS a movie fan I want to search actors and find their trailers
 SO THAT I can watch trailers of the movies they've been in
 
-![screenshot of m5](placeholder)
+![screenshot of m5](Assets/images/hpscreenshot.jpg)
 
 
 ## Tasks Completed
@@ -16,7 +16,7 @@ SO THAT I can watch trailers of the movies they've been in
 * Added CSS design and html code using the Bulma framework 
 
 ## Links
-* [Link to the deployed website]()
+* [Link to the deployed website](https://michvalenz.github.io/m5/)
 * [Link to the code repository](https://github.com/MichValenz/m5)
 
 ## Installation
@@ -25,7 +25,7 @@ Upload all files, including index.html and style.css
 ## References and Tutorials
 - [https://imdb-api.com/]
 - [https://developers.google.com/youtube/v3]
-- []
+- [https://bulma.io/documentation/overview/]
 
 ## License
 MIT License
