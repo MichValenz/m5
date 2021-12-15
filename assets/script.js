@@ -1,6 +1,7 @@
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('textarea-input')
-
+//global var for display
+const actorInfo;
 const actorModal = document.getElementById('actor-modal-warning')
 
 function searchActor() {
@@ -18,7 +19,11 @@ function searchActor() {
         if (isNaN(actor)) {
 
             getActor(actor);
-
+        //local storage 
+            saveSearch(actor);
+            actorInfo = actor;
+        
+            
         } else if (actor === "") {
 
             triggerActorModal();
@@ -129,10 +134,30 @@ function getTrailer(newActorData) {
     });
 }
 
+function createElements(){
+    //.each in newActorData
+    actorInfo.forEach(function(title, i){
+        var infoContainer = $("li");
+        infoContainer.tectContent(title);
+        var post = document.getElementById("#response");
+        post.appendChild(infoContainer);
 
 
-
-
+    });
+   // console.log($.each(title, function()))
+    //var infoContainer = $("li");
+   // var infoSpan = $("<span>");
+   // var infoP = $("<p>");
+}
+ 
+function saveSearch(data){
+    localStorage.setItem("searches",JSON.stringify(data));
+    console.log("saved"+ data);
+}
+var getSearch = function(){
+    input = JSON.parse(localStorage.getItem("searches"));
+    //return input;
+}
 
 
 
