@@ -6,44 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>m5</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="Assets/style.css">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
   <!-----------------HEADER START------------------------->
   <section id="home-header" class="is-small has-text-centered">
     <div class="web-body">
-      <h1 id="project-title" class="title">m5</h1>
-      <p class="subtitle is-italic">Preview your movie</p>
+      <h1 id="project-title" class="title is-1">m5</h1>
+      <p class="subtitle is-italic">Preview your movie!</p>
     </div>
-  </section 
-  <!-----------------HEADER END------------------------->
+  </section <!-----------------HEADER END------------------------->
 
   <!---------------SEARCH START--------------------->
   <section id="search-nav-container" class="section is-large search-section is-justify-content-center">
     <nav id="search-nav" class="columns is-mobile">
       <!---------------FORM START--------------------->
-      <form class="panel column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
-        <h1 id="search-title" class="title panel-heading">Find Your Trailer</h1>
+      <form id="search-form" class="panel column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+        <h1 id="search-title" class="title panel-heading">Search for Movies by Actor</h1>
         <div class="field has-addons is-justify-content-center">
-          <div class="control bar is-half">
-            <input class="input is-focused" type="text" placeholder="Search by Actor">
+          <div id="textarea-control" class="control bar is-half">
+            <input id="textarea-input" class="input is-focused" type="text" placeholder="Search by Actor">
           </div>
-          <div class="control">
-            <a class="button">Search</a>
+          <div id="button-control" class="control">
+            <button type="submit" class="button">Search</button>
           </div>
         </div>
       </form>
       <!---------------FORM END--------------------->
     </nav>
+
+    <!---------------DISPLAY RESULTS START--------------------->
+    <section id="display-videos" class="section is-larg is-justify-content-center">
+
+    </section>
+    <!---------------DISPLAY RESULTS END--------------------->
   </section>
+
+  <!---------------MODAL START--------------------->
+  <div id="actor-modal-warning" class="modal is-clipped">
+    <div class="modal-background"></div>
+    <div class="modal-content has-background-danger py-5 px-5">
+      <p class="title has-text-centered has-text-white ">Not a valid entry. Please try again.</p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <!---------------MODAL END--------------------->
 
   <!---------------SEARCH END--------------------->
 
   <!-------------FOOTER START------------------>
   <footer class="footer">
     <div class="content has-text-centered">
-      <h1>m5</h1> 
+      <h1>m5</h1>
       <p>
         by <a href="https://jgthms.com">bulma</a>. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
@@ -52,6 +67,6 @@
     </div>
   </footer>
   <!-------------FOOTER END------------------>
+  <script src="./assets/script.js"></script>
 </body>
-
 </html>
