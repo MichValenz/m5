@@ -3,13 +3,13 @@ const searchInput = document.getElementById('textarea-input')
 
 const actorModal = document.getElementById('actor-modal-warning')
 
+const videoContainer = document.getElementById('display-videos')
+
 function searchActor() {
 
     searchForm.addEventListener('submit', function (event) {
-        
 
         event.preventDefault();
-
 
         let actor = searchInput.value;
 
@@ -18,6 +18,8 @@ function searchActor() {
         if (isNaN(actor)) {
 
             getActor(actor);
+            
+            moveFormUpWhenSearching();
 
         } else if (actor === "") {
 
@@ -60,7 +62,7 @@ searchActor();
 //SetTimeout and setInterval are also async because they have a time and will branch off, while the rest of the code will still run.
 function getActor(actor) {
 
-    let actorAPI = `https://imdb-api.com/en/API/SearchName/k_a65zgvjy/${actor}`;
+    let actorAPI = `https://imdb-api.com/en/API/SearchName/k_dp6255mb/${actor}`;
 
     fetch(actorAPI).then(function (response) {
 
@@ -108,33 +110,37 @@ function getActor(actor) {
 
 function getTrailer(newActorData) {
     let trailerAPI =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + newActorData + "%22trailer%22&videoType=any&key=AIzaSyAsv2NlxCjo0BCfsh1_2T_IQRlnRt5oTdY";
-
-
-
+        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" + newActorData + "%22trailer%22&videoType=any&key=AIzaSyBEfQvusH0ElmjEUI5_PuAV9DYkv54Pzgw";
 
     fetch(trailerAPI).then(function (response) {
         if (response.ok) {
-            console.log(response);
+
             response.json().then(function (videoId) {
                 //console.log(videoId.items[0].id.videoId);
                 let newLink = videoId.items[0].id.videoId;
-                let trailerHref = `https://www.youtube.com/watch?v=${newLink}`;
-
-
-
+                let trailerHref = `https://www.youtube.com/embed/${newLink}`;
                 //const foundMovies = trailers.results;
+
+                displayResults(trailerHref);
             });
         }
     });
 }
 
+function displayResults(trailerHref) {
+    
+    let videoEl = document.createElement('iframe');
 
+    videoEl.setAttribute('src', trailerHref);
+    videoEl.setAttribute('width', '320');
+    videoEl.setAttribute('height', '240');
 
+    videoContainer.appendChild(videoEl);
+}
 
+function moveFormUpWhenSearching() {
 
+    searchForm.classList.add('move-up-when-searching');
 
-
-
-
-searchActor();
+    videoContainer.classList.add('move-up-when-searching');
+}
