@@ -1,7 +1,7 @@
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('textarea-input')
 //global var for display
-const actorInfo;
+const actorInfo = [];
 const actorModal = document.getElementById('actor-modal-warning')
 
 function searchActor() {
@@ -150,14 +150,14 @@ function createElements(){
    // var infoP = $("<p>");
 }
  
-function saveSearch(data){
-    localStorage.setItem("searches",JSON.stringify(data));
-    console.log("saved"+ data);
+function saveSearch(actorInfo){
+    localStorage.setItem("searches",JSON.stringify(actorInfo));
+    console.log("saved"+ actorInfo);
 }
-var getSearch = function(){
-    input = JSON.parse(localStorage.getItem("searches"));
-    //return input;
-}
+// var getSearch = function(){
+//     input = JSON.parse(localStorage.getItem("searches"));
+//     //return input;
+//}
 
 
 
