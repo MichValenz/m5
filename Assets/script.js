@@ -6,8 +6,10 @@ const actorModal = document.getElementById('actor-modal-warning')
 function searchActor() {
 
     searchForm.addEventListener('submit', function (event) {
+        
 
         event.preventDefault();
+
 
         let actor = searchInput.value;
 
