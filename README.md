@@ -8,7 +8,7 @@ The m5 website is designed to provide quick movie trailers for users to sample b
 AS a movie fan I want to search actors and find their trailers
 SO THAT I can watch trailers of the movies they've been in
 
-![screenshot of m5](Assets/images/hpscreenshot.jpg)
+![screenshot of m5](assets/images/hpscreenshot.jpg)
 
 
 ## Tasks Completed
