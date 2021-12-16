@@ -77,6 +77,10 @@ form .title {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+iframe {
+    margin: 20px;
+}
 /* ---------------------------------VIDEO DISPLAY END */
 
 /* ---------------------------------FOOTER SECTION END */

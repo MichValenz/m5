@@ -1,9 +1,12 @@
 const searchForm = document.getElementById('search-form')
-const searchInput = document.getElementById('textarea-input')
+const searchInput = document.getElementById('textarea-input');
 
-const actorModal = document.getElementById('actor-modal-warning')
+const actorModal = document.getElementById('actor-modal-warning');
 const actorInfo = []
-const videoContainer = document.getElementById('display-videos')
+const videoContainer = document.getElementById('display-videos');
+
+
+let savedActor = JSON.parse(localStorage.getItem("searches"));
 
 function searchActor() {
 
@@ -16,13 +19,14 @@ function searchActor() {
         console.log();
         //isNaN is basically, is Not a Number. Checking if actor is not a number, otherwise will be invalid and will not take.
         if (isNaN(actor)) {
-            saveSearch(actor);
-            
+
             getActor(actor);
             
             moveFormUpWhenSearching();
-            
 
+            saveSearch(actor);
+            
+        //Modals will only trigger when the the input isn't valid
         } else if (actor === "") {
 
             triggerActorModal();
@@ -34,17 +38,18 @@ function searchActor() {
             triggerActorModal();
 
             console.log('is a number')
-
         };
     });
 }
 
+//Adds a class that will show the modal, is-active is a special Bulma class
 function triggerActorModal() {
 
     actorModal.classList.add('is-active');
 
 };
 
+//When the use exist out of the modal by clicking the X it will close the modal
 function closeOpenModal() {
 
     const closeModal = document.querySelector('.modal-close');
@@ -53,7 +58,6 @@ function closeOpenModal() {
 
         actorModal.classList.remove('is-active');
     });
-
 };
 
 closeOpenModal();
@@ -64,7 +68,7 @@ searchActor();
 //SetTimeout and setInterval are also async because they have a time and will branch off, while the rest of the code will still run.
 function getActor(actor) {
 
-    let actorAPI = `https://imdb-api.com/en/API/SearchName/k_dp6255mb/${actor}`;
+    let actorAPI = `https://imdb-api.com/en/API/SearchName/k_a65zgvjy/${actor}`;
 
     fetch(actorAPI).then(function (response) {
 
@@ -149,8 +153,21 @@ function moveFormUpWhenSearching() {
 
 //commits textContent to localStorage and global array
 function saveSearch(name){
-    this.name = String;
+    
     localStorage.setItem("searches",JSON.stringify(name));
-    actorInfo.push(name);
+
+    savedActor.push(name);
+
+    console.log(localStorage.getItem('searches'))
     //console.log(actorInfo[0]);
 }
+
+function getSavedSearch() {
+    
+    if (savedActor != null) {
+
+        getActor(savedActor)
+    }
+}
+
+onload = getSavedSearch();
