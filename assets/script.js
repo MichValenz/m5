@@ -16,11 +16,12 @@ function searchActor() {
         console.log();
         //isNaN is basically, is Not a Number. Checking if actor is not a number, otherwise will be invalid and will not take.
         if (isNaN(actor)) {
-
+            saveSearch(actor);
+            
             getActor(actor);
             
             moveFormUpWhenSearching();
-            saveSearch(actor);
+            
 
         } else if (actor === "") {
 
@@ -146,10 +147,10 @@ function moveFormUpWhenSearching() {
     videoContainer.classList.add('move-up-when-searching');
 }
 
-
+//commits textContent to localStorage and global array
 function saveSearch(name){
     this.name = String;
     localStorage.setItem("searches",JSON.stringify(name));
     actorInfo.push(name);
-    console.log(actorInfo[0]);
+    //console.log(actorInfo[0]);
 }
