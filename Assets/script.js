@@ -2,7 +2,7 @@ const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('textarea-input')
 
 const actorModal = document.getElementById('actor-modal-warning')
-
+const actorInfo = []
 const videoContainer = document.getElementById('display-videos')
 
 function searchActor() {
@@ -20,6 +20,7 @@ function searchActor() {
             getActor(actor);
             
             moveFormUpWhenSearching();
+            saveSearch(actor);
 
         } else if (actor === "") {
 
@@ -143,4 +144,12 @@ function moveFormUpWhenSearching() {
     searchForm.classList.add('move-up-when-searching');
 
     videoContainer.classList.add('move-up-when-searching');
+}
+
+
+function saveSearch(name){
+    this.name = String;
+    localStorage.setItem("searches",JSON.stringify(name));
+    actorInfo.push(name);
+    console.log(actorInfo[0]);
 }
