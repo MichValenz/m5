@@ -151,5 +151,5 @@ function saveSearch(name){
     this.name = String;
     localStorage.setItem("searches",JSON.stringify(name));
     actorInfo.push(name);
-    console.log(actorInfo[0]);
+   // console.log(actorInfo[0]);
 }
