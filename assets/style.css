@@ -107,6 +107,7 @@ a {
     .move-up-when-searching {
         position: relative;
         bottom: 320px;
+        transition: 1s ease-in-out;
     }
 }
 
